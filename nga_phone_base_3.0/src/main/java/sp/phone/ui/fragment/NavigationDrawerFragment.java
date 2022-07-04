@@ -148,18 +148,18 @@ public class NavigationDrawerFragment extends BaseMvpFragment<BoardPresenter> im
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.menu_add:
-                gotoForumList();
-                break;
-            case R.id.menu_add_id:
-                showAddBoardDialog();
-                break;
+//            case R.id.menu_add:
+//                gotoForumList();
+//                break;
+//            case R.id.menu_add_id:
+//                showAddBoardDialog();
+//                break;
             case R.id.menu_login:
                 jumpToLogin();
                 break;
-            case R.id.menu_clear_recent:
-                clearFavoriteBoards();
-                break;
+//            case R.id.menu_clear_recent:
+//                clearFavoriteBoards();
+//                break;
             default:
                 return getActivity().onOptionsItemSelected(item);
         }

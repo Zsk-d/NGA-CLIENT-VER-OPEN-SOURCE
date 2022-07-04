@@ -50,7 +50,7 @@ public class ThemeManager implements SharedPreferences.OnSharedPreferenceChangeL
         } else if (key.equals(PreferenceKey.MATERIAL_THEME)) {
             mThemeIndex = Integer.parseInt(sp.getString(key, "0"));
         } else if (key.equals(PreferenceKey.KEY_NIGHT_MODE_FOLLOW_SYSTEM)) {
-            mNightModeFollowSystem = sp.getBoolean(key, false);
+            mNightModeFollowSystem = sp.getBoolean(key, true);
             applyDayNight();
         }
         mWebViewTheme = null;
@@ -67,7 +67,7 @@ public class ThemeManager implements SharedPreferences.OnSharedPreferenceChangeL
         sp.registerOnSharedPreferenceChangeListener(this);
         mNightMode = sp.getBoolean(PreferenceKey.NIGHT_MODE, false);
         mThemeIndex = Integer.parseInt(sp.getString(PreferenceKey.MATERIAL_THEME, "1"));
-        mNightModeFollowSystem = sp.getBoolean(PreferenceKey.KEY_NIGHT_MODE_FOLLOW_SYSTEM, false);
+        mNightModeFollowSystem = sp.getBoolean(PreferenceKey.KEY_NIGHT_MODE_FOLLOW_SYSTEM, true);
         applyDayNightDelay(0);
     }
 

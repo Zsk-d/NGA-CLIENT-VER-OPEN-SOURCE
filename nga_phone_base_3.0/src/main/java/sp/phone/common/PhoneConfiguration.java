@@ -82,7 +82,7 @@ public class PhoneConfiguration extends PreferenceKey implements SharedPreferenc
                 mHardwareAcceleratedEnabled = sp.getBoolean(key, true);
                 break;
             case PreferenceKey.FILTER_SUB_BOARD:
-                mFilterSubBoard = sp.getBoolean(key, false);
+                mFilterSubBoard = sp.getBoolean(key, true);
                 break;
             case PreferenceKey.SORT_BY_POST:
                 mSortByPostOrder = sp.getBoolean(key, false);
@@ -125,7 +125,7 @@ public class PhoneConfiguration extends PreferenceKey implements SharedPreferenc
         mLeftHandMode = sp.getBoolean(PreferenceKey.LEFT_HAND, false);
         mShowBottomTab = sp.getBoolean(PreferenceKey.BOTTOM_TAB, false);
         mHardwareAcceleratedEnabled = sp.getBoolean(PreferenceKey.HARDWARE_ACCELERATED, true);
-        mFilterSubBoard = sp.getBoolean(PreferenceKey.FILTER_SUB_BOARD, false);
+        mFilterSubBoard = sp.getBoolean(PreferenceKey.FILTER_SUB_BOARD, true);
         mSortByPostOrder = sp.getBoolean(PreferenceKey.SORT_BY_POST, false);
 
         mImageLoadStrategy = sp.getString(PreferenceKey.KEY_LOAD_IMAGE_STRATEGY, mImageLoadStrategy);

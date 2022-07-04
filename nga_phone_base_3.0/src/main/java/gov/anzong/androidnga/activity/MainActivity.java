@@ -116,18 +116,18 @@ public class MainActivity extends BaseActivity {
             case R.id.menu_reply:
                 startPostActivity(true);
                 break;
-            case R.id.menu_about:
-                aboutNgaClient();
-                break;
+//            case R.id.menu_about:
+//                aboutNgaClient();
+//                break;
             case R.id.menu_search:
                 startSearchActivity();
                 break;
-            case R.id.menu_forward:
-                new UrlInputDialogFragment().show(getSupportFragmentManager());
-                break;
-            case R.id.menu_gun:
-                startNotificationActivity();
-                break;
+//            case R.id.menu_forward:
+//                new UrlInputDialogFragment().show(getSupportFragmentManager());
+//                break;
+//            case R.id.menu_gun:
+//                startNotificationActivity();
+//                break;
             case R.id.menu_download:
                 startActivity(new Intent(this,TopicCacheActivity.class));
                 break;

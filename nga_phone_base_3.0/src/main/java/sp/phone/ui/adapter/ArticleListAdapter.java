@@ -433,11 +433,12 @@ public class ArticleListAdapter extends RecyclerView.Adapter<ArticleListAdapter.
         int fgColor = mThemeManager.getAccentColor(mContext);
         FunctionUtils.handleNickName(row, fgColor, holder.nickNameTV, mTopicOwner, mContext);
 
-        holder.floorTv.setText(MessageFormat.format("[{0} 楼]", String.valueOf(row.getLou())));
+        holder.floorTv.setText(MessageFormat.format("{0} 楼", String.valueOf(row.getLou())));
         holder.postTimeTv.setText(row.getPostdate());
-        holder.scoreTv.setText(MessageFormat.format("顶 : {0}", row.getScore()));
+        holder.scoreTv.setText(MessageFormat.format("赞 : {0}", row.getScore()));
 
-        holder.detailTv.setText(String.format("级别：%s   威望：%s   发帖：%s", row.getMemberGroup(), row.getReputation(), row.getPostCount()));
+//        holder.detailTv.setText(String.format("级别：%s   威望：%s   发帖：%s", row.getMemberGroup(), row.getReputation(), row.getPostCount()));
+        holder.detailTv.setText(String.format("发帖：%s", row.getPostCount()));
 
     }
 

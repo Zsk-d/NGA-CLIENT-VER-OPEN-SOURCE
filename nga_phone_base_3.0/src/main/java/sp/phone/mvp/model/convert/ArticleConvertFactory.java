@@ -118,7 +118,7 @@ public class ArticleConvertFactory {
             ThreadRowInfo row = JSONObject.toJavaObject(rowObj, ThreadRowInfo.class);
             buildRowHotReplay(row, rowObj);
             buildRowComment(row, rowObj, userInfoMap);
-            buildRowClientInfo(row, rowObj);
+//            buildRowClientInfo(row, rowObj);
             buildRowUserInfo(row, userInfoMap);
             buildRowVote(row, rowObj);
             buildRowContent(row);

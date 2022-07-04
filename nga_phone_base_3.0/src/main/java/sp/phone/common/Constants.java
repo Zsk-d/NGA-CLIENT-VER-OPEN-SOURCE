@@ -6,16 +6,24 @@ package sp.phone.common;
 public class Constants {
 
     public static final int DEFAULT_TEXT_SIZE = 19;
-
-    public static final int TOPIC_TITLE_SIZE_DEFAULT = 18;
+    /**
+     * 帖子列表
+     */
+    public static final int TOPIC_TITLE_SIZE_DEFAULT = 16;
     public static final int TOPIC_TITLE_SIZE_MIN = 1;
     public static final int TOPIC_TITLE_SIZE_MAX = 25;
 
-    public static final int AVATAR_SIZE_DEFAULT = 104;
+    /**
+     * 头像大小
+     */
+    public static final int AVATAR_SIZE_DEFAULT = 75;
     public static final int AVATAR_SIZE_MIN = 1;
     public static final int AVATAR_SIZE_MAX = 140;
 
-    public static final int EMOTICON_SIZE_DEFAULT = 150;
+    /**
+     * 表情大小
+     */
+    public static final int EMOTICON_SIZE_DEFAULT = 60;
     public static final int EMOTICON_SIZE_MIN = 1;
     public static final int EMOTICON_SIZE_MAX = 200;
 
@@ -23,5 +31,8 @@ public class Constants {
     public static final int TOPIC_CONTENT_SIZE_MIN = 1;
     public static final int TOPIC_CONTENT_SIZE_MAX = 34;
 
-    public static final int WEBVIEW_DEFAULT_TEXT_ZOOM = 70;
+    /**
+     * 帖子详情大小
+     */
+    public static final int WEBVIEW_DEFAULT_TEXT_ZOOM = 65;
 }
