@@ -154,7 +154,7 @@
     <string name="prompt">提示</string>
     <string name="promptnewversion">提示(花几秒看完它)</string>
     <string name="i_know">知道了</string>
-    <string name="start_title">NGA客户端开源版</string>
+    <string name="start_title">客户端</string>
     <string name="create_cache_dir">创建缓存目录</string>
     <string name="move_avatar">移动头像到新位置</string>
     <string name="error">错误</string>
@@ -389,7 +389,7 @@
     <string name="label_activity_message_detail">短消息正文</string>
     <string name="label_activity_topic_history">浏览历史</string>
     <string name="label_activity_login">登录</string>
-    <string name="label_activity_main">NGA客户端开源版</string>
+    <string name="label_activity_main">客户端</string>
     <string name="title_about">关于</string>
 
     <!-- error -->
