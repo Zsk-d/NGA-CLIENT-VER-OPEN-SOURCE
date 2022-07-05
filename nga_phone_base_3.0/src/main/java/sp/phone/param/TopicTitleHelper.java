@@ -128,13 +128,14 @@ public class TopicTitleHelper {
                 handleNewFormat(builder, misc, titleLength);
             }
         }
-
+        // 转移回帖数
+        SpannableStringBuilder boardBuilder = new SpannableStringBuilder();
+        boardBuilder.append(" [").append(String.valueOf(entry.getReplies())).append("]");
         if (!TextUtils.isEmpty(entry.getBoard())) {
-            SpannableStringBuilder boardBuilder = new SpannableStringBuilder();
             boardBuilder.append("  [").append(entry.getBoard()).append("]");
-            boardBuilder.setSpan(new ForegroundColorSpan(ContextUtils.getColor(R.color.text_color_disabled)), 0, boardBuilder.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
-            builder.append(boardBuilder);
         }
+        boardBuilder.setSpan(new ForegroundColorSpan(ContextUtils.getColor(R.color.text_color_disabled)), 0, boardBuilder.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+        builder.append(boardBuilder);
         return builder;
     }
 
