@@ -185,6 +185,15 @@ public class ArticleListFragment extends BaseMvpFragment<ArticleListPresenter> i
         }
 
     };
+    private View.OnClickListener mSupportListener = new View.OnClickListener() {
+
+        @Override
+        public void onClick(View view) {
+            ThreadRowInfo row = (ThreadRowInfo) view.getTag();
+            int tid = row.getTid();
+            mPresenter.postSupportTask(tid, row.getPid());
+        }
+    };
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -237,6 +246,7 @@ public class ArticleListFragment extends BaseMvpFragment<ArticleListPresenter> i
         ((BaseActivity) getActivity()).setupToolbar();
         mArticleAdapter = new ArticleListAdapter(getContext(),getActivity().getSupportFragmentManager());
         mArticleAdapter.setMenuTogglerListener(mMenuTogglerListener);
+        mArticleAdapter.setSupportListener(mSupportListener);
         mListView.setLayoutManager(new LinearLayoutManager(getContext()));
         mListView.setItemViewCacheSize(20);
         mListView.setAdapter(mArticleAdapter);

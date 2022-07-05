@@ -184,6 +184,8 @@ public class ArticleListAdapter extends RecyclerView.Adapter<ArticleListAdapter.
         }
     };
 
+    private View.OnClickListener mOnSupportClickListener;
+
     private View.OnClickListener mOnReplyClickListener = new View.OnClickListener() {
 
         private Intent getReplyIntent(ThreadRowInfo row) {
@@ -331,6 +333,9 @@ public class ArticleListAdapter extends RecyclerView.Adapter<ArticleListAdapter.
         @BindView(R.id.iv_reply)
         ImageView replyBtn;
 
+        @BindView(R.id.iv_support)
+        ImageView supportBtn;
+
         @BindView(R.id.iv_avatar)
         ImageView avatarIv;
 
@@ -378,6 +383,9 @@ public class ArticleListAdapter extends RecyclerView.Adapter<ArticleListAdapter.
     public void setMenuTogglerListener(View.OnClickListener menuTogglerListener) {
         mMenuTogglerListener = menuTogglerListener;
     }
+    public void setSupportListener(View.OnClickListener supportListener) {
+        mOnSupportClickListener = supportListener;
+    }
 
     @Override
     public int getItemViewType(int position) {
@@ -400,6 +408,7 @@ public class ArticleListAdapter extends RecyclerView.Adapter<ArticleListAdapter.
         }
         RxUtils.clicks(viewHolder.nickNameTV, mOnProfileClickListener);
         RxUtils.clicks(viewHolder.replyBtn, mOnReplyClickListener);
+        RxUtils.clicks(viewHolder.supportBtn, mOnSupportClickListener);
         RxUtils.clicks(viewHolder.clientIv, mOnClientClickListener);
         RxUtils.clicks(viewHolder.menuIv, mMenuTogglerListener);
         RxUtils.clicks(viewHolder.avatarPanel, mOnAvatarClickListener);
@@ -422,6 +431,7 @@ public class ArticleListAdapter extends RecyclerView.Adapter<ArticleListAdapter.
         }
 
         holder.replyBtn.setTag(row);
+        holder.supportBtn.setTag(row);
         holder.nickNameTV.setTag(row);
         holder.menuIv.setTag(row);
         holder.avatarPanel.setTag(row);
