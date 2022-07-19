@@ -89,6 +89,9 @@ public class ProfileActivity extends BaseActivity implements OnHttpCallBack<Prof
     @BindView(R.id.tv_user_email)
     public TextView mUserEmailTv;
 
+    @BindView(R.id.tv_user_ip_loc)
+    public TextView mUserIpLocTv;
+
     @BindView(R.id.tv_post_count)
     public TextView mPostCountTv;
 
@@ -205,6 +208,7 @@ public class ProfileActivity extends BaseActivity implements OnHttpCallBack<Prof
         mPostCountTv.setText(profileInfo.getPostCount());
         mRegisterTimeTv.setText(profileInfo.getRegisterDate());
         mUserEmailTv.setText(profileInfo.getEmailAddress());
+        mUserIpLocTv.setText(profileInfo.getIpLoc());
         mUserTelTv.setText(profileInfo.getPhoneNumber());
         mUserGroupTv.setText(profileInfo.getMemberGroup());
         if (mCurrentUser) {

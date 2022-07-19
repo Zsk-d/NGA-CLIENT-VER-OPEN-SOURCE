@@ -145,6 +145,9 @@ public class JsonProfileLoadTask {
         String money = obj.getString("money");
         ret.setMoney(StringUtils.isEmpty(money) ? "0" : money);
 
+        String ipLoc = obj.getString("ipLoc");
+        ret.setIpLoc(StringUtils.isEmpty(ipLoc) ? "未知" : ipLoc);
+
         String frame = obj.getString("fame");
         ret.setFrame(StringUtils.isEmpty(frame) ? defaultValue : frame);
 

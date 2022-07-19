@@ -108,13 +108,13 @@
                     android:id="@+id/tv_post_count"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
                     android:layout_alignTop="@+id/tv_user_group_title"
+                    android:layout_alignParentEnd="true"
                     android:ellipsize="end"
                     android:singleLine="true"
                     android:text="N/A"
                     android:textColor="#808080"
-                    android:textIsSelectable="false"/>
+                    android:textIsSelectable="false" />
 
                 <TextView
                     android:id="@+id/tv_post_count_title"
@@ -205,13 +205,25 @@
                     android:id="@+id/tv_user_state"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
                     android:layout_alignTop="@+id/tv_user_money_title"
+                    android:layout_alignParentEnd="true"
                     android:ellipsize="end"
                     android:singleLine="true"
                     android:text="已激活"
                     android:textColor="#3d9f0e"
-                    android:textIsSelectable="false"/>
+                    android:textIsSelectable="false" />
+
+                <TextView
+                    android:id="@+id/tv_user_ip_loc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/tv_user_register_time_title"
+                    android:layout_alignParentEnd="true"
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:text="未知"
+                    android:textColor="#808080"
+                    android:textIsSelectable="false" />
 
                 <TextView
                     android:id="@+id/tv_user_state_title"
@@ -221,7 +233,17 @@
                     android:layout_toStartOf="@+id/tv_user_state"
                     android:text="状态 : "
                     android:textColor="#121c46"
-                    android:textIsSelectable="false"/>
+                    android:textIsSelectable="false" />
+
+                <TextView
+                    android:id="@+id/tv_user_loc_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/tv_user_ip_loc"
+                    android:layout_toStartOf="@+id/tv_user_ip_loc"
+                    android:text="IP所属地 : "
+                    android:textColor="#121c46"
+                    android:textIsSelectable="false" />
 
                 <TextView
                     android:id="@+id/tv_user_mute_time"
@@ -241,7 +263,7 @@
                     android:layout_below="@+id/tv_user_money_title"
                     android:text="注册日期 : "
                     android:textColor="#121c46"
-                    android:textIsSelectable="false"/>
+                    android:textIsSelectable="false" />
 
                 <TextView
                     android:id="@+id/tv_user_register_time"
