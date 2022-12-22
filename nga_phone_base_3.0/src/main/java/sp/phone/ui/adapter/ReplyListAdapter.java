@@ -1,7 +1,7 @@
 package sp.phone.ui.adapter;
 
 import android.content.Context;
-import android.graphics.Color;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -9,12 +9,10 @@ import android.widget.TextView;
 import java.util.Iterator;
 import java.util.List;
 
-import androidx.recyclerview.widget.RecyclerView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import gov.anzong.androidnga.R;
 import sp.phone.mvp.model.entity.ThreadPageInfo;
-import sp.phone.theme.ThemeManager;
 import sp.phone.util.StringUtils;
 
 /**
@@ -23,11 +21,8 @@ import sp.phone.util.StringUtils;
 
 public class ReplyListAdapter extends BaseAppendableAdapter<ThreadPageInfo, ReplyListAdapter.ViewHolder> {
 
-    private boolean isNightMode;
-
     public ReplyListAdapter(Context context) {
         super(context);
-        isNightMode = ThemeManager.getInstance().isNightMode();
     }
 
     @Override
@@ -40,14 +35,10 @@ public class ReplyListAdapter extends BaseAppendableAdapter<ThreadPageInfo, Repl
         ThreadPageInfo pageInfo = getItem(position);
         ThreadPageInfo.ReplyInfo replyInfo = pageInfo.getReplyInfo();
 
-        if (isNightMode) {
-            holder.mActionTv.setTextColor(Color.parseColor("#FF128F80"));
-            holder.mContentTv.setTextColor(Color.parseColor("#FF128F80"));
-        }
-
         holder.mContentTv.setText(replyInfo.getContent());
         holder.mSubjectTv.setText(replyInfo.getSubject());
         holder.mPostDateTv.setText(StringUtils.timeStamp2Date2(replyInfo.getPostDate()));
+
 
         holder.itemView.setOnClickListener(mOnClickListener);
         holder.itemView.setTag(pageInfo);
@@ -76,9 +67,6 @@ public class ReplyListAdapter extends BaseAppendableAdapter<ThreadPageInfo, Repl
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-
-        @BindView(R.id.tv_action)
-        public TextView mActionTv;
 
         @BindView(R.id.tv_content)
         public TextView mContentTv;

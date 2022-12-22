@@ -165,4 +165,12 @@ public class ProfileData {
     public void setReputationEntryList(List<ReputationData> reputationEntryList) {
         mReputationEntryList = reputationEntryList;
     }
+
+    public String getIpLoc() {
+        return ipLoc;
+    }
+
+    public void setIpLoc(String ipLoc) {
+        this.ipLoc = ipLoc;
+    }
 }

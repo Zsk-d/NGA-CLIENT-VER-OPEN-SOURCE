@@ -37,12 +37,9 @@ public class VersionUpgradeDialogFragment extends BaseDialogFragment {
 
     private String getUpgradeTip() {
         try {
-            int id  = getContext().getResources().getIdentifier("tip_" + BuildConfig.VERSION_CODE, "string", getContext().getPackageName());
-            if (id > 0) {
-                return getString(id);
-            } else {
-                return null;
-            }
+            Class clz = VersionUpgradeTips.class;
+            Field field = clz.getDeclaredField("TIPS_" + BuildConfig.VERSION_CODE);
+            return (String) field.get(null);
         } catch (Throwable e) {
             e.printStackTrace();
         }

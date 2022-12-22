@@ -33,7 +33,6 @@ public class NgaClientApp extends Application {
     public void onCreate() {
         NLog.w(TAG, "app nga android start");
         ContextUtils.setApplication(this);
-        PreferenceUtils.transfer(this);
         checkNewVersion();
         VersionUpgradeHelper.upgrade();
         AppDatabase.init(this);

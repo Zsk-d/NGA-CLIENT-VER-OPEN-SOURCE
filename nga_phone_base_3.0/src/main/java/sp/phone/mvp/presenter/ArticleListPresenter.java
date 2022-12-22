@@ -303,14 +303,8 @@ public class ArticleListPresenter extends BasePresenter<ArticleListFragment, Art
     public void onViewCreated() {
         if (mRequestParam != null && mRequestParam.loadCache) {
             mBaseModel.loadCachePage(mRequestParam, mDataCallBack);
-        }
-    }
-
-    @Override
-    protected void onResume() {
-        if (mRequestParam != null && !mRequestParam.loadCache && mThreadData == null) {
+        } else {
             loadPage(mRequestParam);
         }
-        super.onResume();
     }
 }

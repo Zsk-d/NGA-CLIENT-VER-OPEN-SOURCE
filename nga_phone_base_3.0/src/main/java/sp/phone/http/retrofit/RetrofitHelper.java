@@ -2,13 +2,11 @@ package sp.phone.http.retrofit;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.text.TextUtils;
 
 import java.net.URLDecoder;
 
 import gov.anzong.androidnga.base.util.ContextUtils;
 import gov.anzong.androidnga.base.util.StringUtils;
-import gov.anzong.androidnga.base.util.ThreadUtils;
 import gov.anzong.androidnga.common.PreferenceKey;
 import gov.anzong.androidnga.debug.Debugger;
 import okhttp3.MediaType;
@@ -21,7 +19,6 @@ import sp.phone.common.UserManagerImpl;
 import sp.phone.http.retrofit.converter.JsonStringConvertFactory;
 import sp.phone.util.ForumUtils;
 import sp.phone.util.NLog;
-import sp.phone.view.webview.WebViewEx;
 
 /**
  * Created by Justwen on 2017/10/10.
@@ -35,8 +32,6 @@ public class RetrofitHelper {
 
     private String mBaseUrl;
 
-    private String mUserAgent = "";
-
     private RetrofitHelper() {
         SharedPreferences sp = ContextUtils.getContext().getSharedPreferences(PreferenceKey.PERFERENCE, Context.MODE_PRIVATE);
         mBaseUrl = ForumUtils.getAvailableDomain();
@@ -48,26 +43,6 @@ public class RetrofitHelper {
                 mRetrofit = createRetrofit();
             }
         });
-
-        mUserAgent = sp.getString(PreferenceKey.USER_AGENT, "");
-
-        if (TextUtils.isEmpty(mUserAgent)) {
-            ThreadUtils.postOnMainThread(() -> {
-                mUserAgent = WebViewEx.getDefaultUserAgent();
-                sp.edit().putString(PreferenceKey.USER_AGENT, mUserAgent).apply();
-                //mUserAgent = "NGA_WP_JW/(;WINDOWS)";
-            });
-        }
-
-
-    }
-
-    public void setUserAgent(String userAgent) {
-        mUserAgent = userAgent;
-    }
-
-    public String getUserAgent() {
-        return mUserAgent;
     }
 
     public Retrofit createRetrofit() {
@@ -105,7 +80,7 @@ public class RetrofitHelper {
             }
             Request request = original.newBuilder()
                     .header("Cookie", cookie)
-                    .header("User-Agent", mUserAgent)
+                    .header("User-Agent", "Nga_Official/80023")
                     .method(original.method(), original.body())
                     .build();
             return chain.proceed(request);

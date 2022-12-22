@@ -1,11 +1,14 @@
-package androidx.preference;
+package android.preference;
 
 import android.content.Context;
+import android.preference.ListPreference;
 import android.util.AttributeSet;
 import android.view.View;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
+/**
+ * Created by Justwen on 2017/7/16.
+ */
 
 public class ListSummaryPreference extends ListPreference {
 
@@ -18,9 +21,9 @@ public class ListSummaryPreference extends ListPreference {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull PreferenceViewHolder holder) {
-        super.onBindViewHolder(holder);
-        TextView summaryView = holder.itemView.findViewById(android.R.id.summary);
+    protected void onBindView(View view) {
+        super.onBindView(view);
+        TextView summaryView = (TextView) view.findViewById(android.R.id.summary);
         summaryView.setVisibility(View.VISIBLE);
         summaryView.setText(getEntry());
     }

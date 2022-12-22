@@ -1,12 +1,11 @@
 package gov.anzong.androidnga.activity;
 
 import android.app.Activity;
+import android.app.Fragment;
+import android.app.FragmentManager;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewAnimationUtils;
-
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 
 import gov.anzong.androidnga.base.util.ThemeUtils;
 import sp.phone.ui.fragment.SettingsFragment;
@@ -29,7 +28,7 @@ public class SettingsActivity extends BaseActivity {
         }
     }
     private void setupFragment() {
-        FragmentManager fm = getSupportFragmentManager();
+        FragmentManager fm = getFragmentManager();
         Fragment settingsFragment = fm.findFragmentByTag(SettingsFragment.class.getSimpleName());
         if (settingsFragment == null) {
             settingsFragment = new SettingsFragment();
